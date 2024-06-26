@@ -86,6 +86,11 @@ router.post('/signup', async (req, res, next) => {
     (req, res, next) => {
         res.send({
             message: "signup successfull",
+            data: {
+                ...req?.user,
+                hart: req?.cookies?.hart,
+                hartRef: req?.cookies?.hartRef
+            },
         })
     }
 );
@@ -161,6 +166,11 @@ router.post('/login', async (req, res, next) => {
     (req, res, next) => {
         res.send({
             message: "login successful",
+            data: {
+                ...req?.user,
+                hart: req?.cookies?.hart,
+                hartRef: req?.cookies?.hartRef
+            },
         })
     }
 )
